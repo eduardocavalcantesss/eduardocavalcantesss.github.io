@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.bolaolegal.app",
+      "sha256_cert_fingerprints": [
+        "D9:B0:C6:1B:2F:9B:26:EC:95:04:C6:B3:29:2F:01:3A:66:68:34:80:EE:87:4D:E7:A0:D6:CB:91:04:4D:02:11"
+      ]
+    }
+  }
+]
