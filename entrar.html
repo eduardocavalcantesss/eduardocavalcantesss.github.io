@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entrar no Bolão Legal</title>
+<style>
+  body { font-family: -apple-system, sans-serif; background:#121410; color:#fff; display:flex; align-items:center; justify-content:center; min-height:100vh; margin:0; padding:24px; box-sizing:border-box; }
+  .card { max-width:420px; text-align:center; }
+  h1 { color:#FFC107; }
+  .codigo { font-size:2rem; font-weight:bold; letter-spacing:4px; background:#1B5E20; padding:12px 24px; border-radius:12px; display:inline-block; margin:16px 0; }
+  a.button { display:block; background:#1B5E20; color:#fff; text-decoration:none; padding:14px; border-radius:24px; margin-top:16px; font-weight:bold; }
+  p { line-height:1.5; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>🎉 Convite pro Bolão Legal</h1>
+    <p>Use este código pra entrar no bolão:</p>
+    <div class="codigo" id="codigo">------</div>
+    <a class="button" id="abrirApp" href="#">Abrir no app</a>
+    <p>Se o app não abrir automaticamente, instale o Bolão Legal e digite o código acima na tela inicial.</p>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const codigo = (params.get('codigo') || '').toUpperCase();
+    document.getElementById('codigo').textContent = codigo || '------';
+    const link = 'bolaolegal://entrar?codigo=' + encodeURIComponent(codigo);
+    document.getElementById('abrirApp').href = link;
+    if (codigo) {
+      window.location.href = link;
+    }
+  </script>
+</body>
+</html>
